@@ -1,0 +1,34 @@
+{% extends 'common.html' %}
+{% block content %}
+    <div class="container">
+        {% for datum in data %}
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card m-2">
+                        <img class="card-img-top img-responsive"
+                             src="{{ datum.poster }}"
+                             alt="Woody Harrelson, Dennis Quaid, Aaron Eckhart, Mandy Moore, Etsushi Toyokawa, Patrick Wilson, Luke Evans, Nick Jonas, and Ed Skrein in Midway (2019)"
+                             height="250" width="40">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ datum.title }}</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted text-info btn btn-warning m-2">Ratings
+                                <span>{{ datum.rating }}</span></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card mt-3 bg-dark text-white" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Official Trailer</h5>
+                            <h6 class="card-subtitle mb-3 text-white text-muted ">{{ datum.title }}</h6>
+                            <p class="card-text text-justify">{{ datum.plot }}</p>
+                            <a href="{{ datum.trailer }}" class="card-link btn btn-warning">Watch trailer Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
